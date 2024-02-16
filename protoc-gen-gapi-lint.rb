@@ -5,20 +5,20 @@
 class ProtocGenGapiLint < Formula
   desc "A gapi-linter plugin for protoc"
   homepage "https://github.com/protoc-extensions/protoc-gen-gapi-lint"
-  version "0.0.1"
+  version "0.0.2"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/protoc-extensions/protoc-gen-gapi-lint/releases/download/v0.0.1/protoc-gen-gapi-lint_0.0.1_darwin_amd64.tar.gz"
-      sha256 "a94d82f4ec59e0cfdcdc9884f3bd01ee05ba62cee46e69c1b5c8a0dd22895493"
+    if Hardware::CPU.arm?
+      url "https://github.com/protoc-extensions/protoc-gen-gapi-lint/releases/download/v0.0.2/protoc-gen-gapi-lint_0.0.2_darwin_arm64.tar.gz"
+      sha256 "1861ac2ba744b8c2d3b1bf8b8629e04a480872ee7896d5075aa49bba7f432c42"
 
       def install
         bin.install "protoc-gen-gapi-lint"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/protoc-extensions/protoc-gen-gapi-lint/releases/download/v0.0.1/protoc-gen-gapi-lint_0.0.1_darwin_arm64.tar.gz"
-      sha256 "686fda71f7dd435d2a00809638e338b13a65acfd700b227d5db300e45a08fd5d"
+    if Hardware::CPU.intel?
+      url "https://github.com/protoc-extensions/protoc-gen-gapi-lint/releases/download/v0.0.2/protoc-gen-gapi-lint_0.0.2_darwin_amd64.tar.gz"
+      sha256 "bb12987e27c438317409dd88accd39e24eeb2933f8e4c4748573e4ab49e5e5f4"
 
       def install
         bin.install "protoc-gen-gapi-lint"
@@ -27,25 +27,25 @@ class ProtocGenGapiLint < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/protoc-extensions/protoc-gen-gapi-lint/releases/download/v0.0.1/protoc-gen-gapi-lint_0.0.1_linux_armv6.tar.gz"
-      sha256 "4f3f3cc777816028d31f2a4fa72b771735044869f6794536f8e38ab139436fed"
-
-      def install
-        bin.install "protoc-gen-gapi-lint"
-      end
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/protoc-extensions/protoc-gen-gapi-lint/releases/download/v0.0.1/protoc-gen-gapi-lint_0.0.1_linux_arm64.tar.gz"
-      sha256 "edbbc08b0662f8e033031b17a72b035f7e72fb2437a3a3aef27b2765defd5522"
+      url "https://github.com/protoc-extensions/protoc-gen-gapi-lint/releases/download/v0.0.2/protoc-gen-gapi-lint_0.0.2_linux_arm64.tar.gz"
+      sha256 "17eb00f7b5f801fd107056a5f9055f12c32e63ef4e2218aafed71c117be1a5bd"
 
       def install
         bin.install "protoc-gen-gapi-lint"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/protoc-extensions/protoc-gen-gapi-lint/releases/download/v0.0.1/protoc-gen-gapi-lint_0.0.1_linux_amd64.tar.gz"
-      sha256 "7fac2e936b8567733a9ec6a5ab87a532f49912c37e0725c79fbff864ff560b4e"
+      url "https://github.com/protoc-extensions/protoc-gen-gapi-lint/releases/download/v0.0.2/protoc-gen-gapi-lint_0.0.2_linux_amd64.tar.gz"
+      sha256 "76843e9b7a0b972b215b070903689718b828ea564945c24f3675d30ddf0d7290"
+
+      def install
+        bin.install "protoc-gen-gapi-lint"
+      end
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/protoc-extensions/protoc-gen-gapi-lint/releases/download/v0.0.2/protoc-gen-gapi-lint_0.0.2_linux_armv6.tar.gz"
+      sha256 "ecb668d9dd8441cbb3e5f75984b39c49f48469bb0e18a48b6588b7a49ba883a3"
 
       def install
         bin.install "protoc-gen-gapi-lint"
